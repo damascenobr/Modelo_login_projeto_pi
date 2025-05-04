@@ -1,0 +1,222 @@
+/* Reset básico para remover margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos do corpo da página */
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Adiciona espaço nas laterais em telas pequenas */
+    background-image:
+    url(../frontEnd_pi/img/casa-senac.jpg);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Container principal do formulário */
+.login-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+}
+
+/* Estilos da área do logo */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 180px;
+    height: 70px;
+}
+
+/* Estilos do título */
+/* h1, .h1-pag {
+    color: #555d6b;
+    font-size: 14px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 400;
+} */
+.h4-pag{
+    color: #555d6b;
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    text-align: center;
+    font-weight: 400;
+
+
+}
+.h4-pag, .h4-1-pag{
+    color: #555d6b;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+
+}
+.h4-1-pag{
+    margin-bottom: 40px;
+}
+
+/* Estilos dos grupos de formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group label i {
+    margin-right: 8px;
+    color: #0066cc;
+}
+
+/* Estilos dos campos de input */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus{
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+input:focus::placeholder{
+   transform: translatey(-5px);
+   font-size: 14px;
+   transition: 0.5s;
+   opacity: 0.5;
+}
+input:not(:focus)::placeholder {
+    opacity: 1;
+    font-size: 16px;
+    transform: translateY(0);
+    transition: 0.5s ease;
+}
+.lembrar-senha {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    justify-content: flex-start;
+  }
+  .lembrar-senha input[type="checkbox"] {
+    width: auto;
+}
+.lab-lembrar-senha{
+    margin-top: 6px;
+}
+
+  
+
+  
+  
+/* input:valid::placeholder {
+    opacity: 0.5;
+    font-size: 14px;
+    transform: translateY(-5px);
+    transition: 0.5s ease;
+} */
+
+/* Estilos do botão de submit */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2f80ed;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.botao-entrar{
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #4192fd;
+}
+
+/* Estilos dos links abaixo do formulário */
+.links {
+    display: flex;
+    margin-top: 15px;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.links a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0 5px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos do rodapé */
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    .logo img {
+        max-width: 150px;
+    }
+}
+@media (max-width: 768px) {
+    .login-box {
+      padding: 30px 20px;
+    }
+  
+    .logo {
+      max-width: 100px;
+    }
+  }
+
+
+
+
+
+
+/*Tranisão com a condição no email - breno*/

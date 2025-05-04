@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recuperação via SMS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+
+      <!-- Logotipo -->
+      <div class="logo">
+        <img src="../img/Senac_logo.svg" alt="Logo do Senac">
+      </div>
+
+      <!-- Título -->
+      <h4 class="h4-pag">Recuperação por telefone</h4>
+      <h4 class="h4-1-pag">Informe seu número de celular</h4>
+
+      <!-- Formulário -->
+      <form id="formSms">
+        <div class="form-group">
+          <label for="telefone"><i class="fas fa-phone"></i> Celular</label>
+          <input type="text" id="telefone" placeholder="(11) 91234-5678" required>
+        </div>
+        <button type="submit" class="botao-recuperar">Enviar código por SMS</button>
+      </form>
+
+      <!-- Link de retorno -->
+      <div class="links">
+        <a href="esqueceu.html">Voltar</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Script JS -->
+  <script>
+    document.getElementById("formSms").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const telefone = document.getElementById("telefone").value.trim();
+
+      if (!telefone) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Campo vazio',
+          text: 'Preencha seu telefone ou CPF.'
+        });
+        return;
+      }
+
+      Swal.fire({
+        title: 'Enviando código...',
+        text: 'Aguarde um instante.',
+        timer: 2000,
+        didOpen: () => Swal.showLoading()
+      }).then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Código enviado!',
+          text: 'Digite o código que você recebeu por SMS.'
+        }).then(() => {
+          // Redireciona para a tela de verificação
+          window.location.href = "verificar-codigo.html";
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

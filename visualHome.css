@@ -1,0 +1,231 @@
+/* Importei uma fonte Inter da Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+body {
+    font-family: "Inter", sans-serif;
+  }
+
+  .topo {
+    background-color: #fff;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+    margin-left: 20px;
+  }
+
+.logo span {
+    font-size: 20px;
+    margin-left: 400px;
+    color: #0062b8;
+    font-weight: 80;
+}
+
+  .icones-sociais a {
+    margin-left: 10px;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    color: #fff;
+  }
+
+  .portal { background-color: orange; }
+  .fale { background-color: #005BAC; }
+  .denuncia { background-color: #f0643d; }
+
+  .menu {
+    background-color: #eee;
+    padding: 2px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .menu ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .menu li {
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  .search-container {
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+  }
+  
+  .search-icon {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 12px;
+    background-color: #ddd;
+    border-radius: 50%;
+  }
+  
+  .search-input {
+    position: absolute;
+    left: 0.05px;
+    top: 40%;
+    transform: translate(-60%, -45%);
+    width: 0;
+    opacity: 0;
+    transition: width 0.5s ease, opacity 0.5s ease;
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-container:hover .search-input,
+  .search-container .search-input:focus {
+    width:180px;
+    height: 100%;
+    opacity: 1;
+  }
+  
+
+  .carousel-item img {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .area-rodape {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f07c00;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .area-rodape .item {
+    flex: 1;
+    margin: 10px;
+  }
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    min-height: 20vh;
+    box-shadow: 10px 5px 5px black;
+  }
+
+  .card-list .card-item {
+    list-style: none;
+  }
+
+  .card-list .card-item .card-link {
+    width: 300px;
+    display: block;
+    background: rgb(19, 130, 194);
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow:  0 10px 10px rgba(0,0,0,0.5);
+    transition: 0.2s ease;
+  }
+
+  .card-list .card-item .card-link:hover {
+    border-color: #ffffff;
+    box-shadow:  0 10px 10px rgba(0, 47, 255, 0.5);
+  }
+
+  .card-list .card-link .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .card-list .card-link .badge {
+    color: #ffffff;
+    background: #dfa700;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 16px 0 18px;
+    width: fit-content;
+    border-radius: 50px;
+  }
+ 
+  .card-list .card-link .card-title {
+    font-size: 1.19rem;
+    color:rgb(255, 255, 255);
+    font-weight: 600;
+  }
+
+  .card-list .card-link .card-button {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 30px 0 5px;
+    border: 2px solid #ffffff;
+    background: #dfa700;
+    color: #033e75;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .card-list .card-link:hover .card-button {
+    transform: rotate(-45deg);
+  }
+
+  /* Botão flutuante WhatsApp */
+  .shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 999;
+    text-decoration: none;
+  }
+
+  @keyframes shake {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0); }
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #1ebe57;
+  }
+  

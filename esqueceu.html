@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recuperação de Acesso</title>
+
+  <!-- Estilo existente -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- SweetAlert2 para pop-ups -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+
+      <!-- Logotipo -->
+      <div class="logo">
+        <img src="../img/Senac_logo.svg" alt="Logo do Senac">
+      </div>
+
+      <!-- Título e instrução -->
+      <h4 class="h4-pag">Esqueceu sua senha?</h4>
+      <h4 class="h4-1-pag">Informe seu e-mail ou CPF para recuperar</h4>
+
+      <!-- Formulário -->
+      <form id="formEsqueciSenha">
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
+          <input type="email" id="email" placeholder="exemplo@senac.com.br" required>
+        </div>
+
+        <!-- Campo de CPF comentado inicialmente, agora ativado -->
+        <div class="form-group">
+          <label for="cpf"><i class="fas fa-id-card"></i> CPF</label>
+          <input type="text" id="cpf" placeholder="000.000.000-00">
+        </div>
+
+        <button type="submit" class="botao-recuperar">Enviar link</button>
+      </form>
+
+      <!-- Link para outro método -->
+      <div class="links">
+        <a href="recuperacao-alternativa.html">Tentar de outro jeito (SMS)</a>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="footer">
+        © 2025 SENAC - Todos os direitos reservados
+      </div>
+    </div>
+  </div>
+
+  <!-- Script JS -->
+  <script>
+    // Máscara de CPF ao digitar
+    document.getElementById("cpf").addEventListener("input", function(e) {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.slice(0, 11);
+      v = v.replace(/(\d{3})(\d)/, "$1.$2");
+      v = v.replace(/(\d{3})(\d)/, "$1.$2");
+      v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+      e.target.value = v;
+    });
+
+    // Envio do formulário
+    document.getElementById("formEsqueciSenha").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const cpf = document.getElementById("cpf").value.trim();
+
+      if (!email && !cpf) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Preencha pelo menos um campo!',
+          text: 'E-mail ou CPF deve ser preenchido.'
+        });
+        return;
+      }
+
+      // Simula carregamento
+      Swal.fire({
+        title: 'Enviando...',
+        text: 'Estamos processando seu pedido.',
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading();
+        }
+      }).then(() => {
+        // Após carregamento
+        Swal.fire({
+          icon: 'success',
+          title: 'Link enviado!',
+          text: 'Verifique sua caixa de entrada ou SMS.',
+        });
+
+        // Feedback no botão
+        const botao = document.querySelector('.botao-recuperar');
+        botao.textContent = "Enviado ✅";
+        botao.disabled = true;
+      });
+    });
+  </script>
+
+</body>
+</html>

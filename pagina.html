@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Pagina do PI</title>
+    <link rel="stylesheet" href="styleAlex.css" />
+
+</head>
+<body>
+    <header>
+        <img class="logo_senac" src="images/logobranca.png">
+        <form class="example" action="action_page.php">
+          <input type="text" placeholder="Pesquisar..." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+
+        <a class="botao_cabecalho" href="#">Área Exclusiva</a>
+    </header>
+    <nav>
+        <a class="home" href="#">Home</a>
+    </nav>
+    <main>
+      <br>
+    <div class="container mx-auto">
+
+  <!--Classificação estrela-->
+    <div class="position-relative">
+        <h1>Repositório de Projetos Integradores</h1>
+        <div class="position-absolute top-0 end-0 estrelas">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+    </div>
+</div>
+
+   <br>
+
+<!-- Texto clicável com seta -->
+<div onclick="toggleInfo('info1', 'seta1')" class="texto-clicavel mb-3">
+    Descrição do Projeto/problemática <span id="seta1" class="seta">▶</span>
+  </div>
+  <!-- Conteúdo oculto/revelado -->
+  <div id="info1" class="info-bloco border  bg-light rounded">
+    <p>Aqui ficaria descrição do projeto</p>
+  </div> 
+<!-- Segundo bloco -->
+<div onclick="toggleInfo('info2', 'seta2')" class="texto-clicavel mt-4 mb-3">
+   Alunos Envolvidos <span id="seta2" class="seta">▶</span>
+  </div>
+  <div id="info2" class="info-bloco border  bg-light rounded">
+    <p>Alexandro</p>
+    <p>Vanessa</p>
+    <p>Jorge</p>
+  </div>
+  <div onclick="toggleInfo('info3', 'seta3')" class="texto-clicavel mt-4 mb-3">
+    Informações da Turma <span id="seta3" class="seta">▶</span>
+   </div>
+   <div id="info3" class="info-bloco border bg-light rounded">
+     <p>Alexandro</p>
+   </div>
+   <div onclick="toggleInfo('info4', 'seta4')" class="texto-clicavel mt-4 mb-3">
+    Mídias <span id="seta4" class="seta">▶</span>
+   </div>
+   <div id="info4" class="info-bloco border  bg-light rounded">
+    <img class="logo_senac" src="Senac_logo.svg.png">
+    <img class="logo_senac" src="Senac_logo.svg.png">
+    <img class="logo_senac" src="Senac_logo.svg.png">
+   </div>
+    </div>
+    <br>
+    <!--Container exclusivo para aba de comentários-->
+    <div class="container mx-auto">
+        <h3>O que as pessoas estão dizendo sobre o projeto...</h3>
+        <br>
+        <br>
+        <div class="danger">
+          <img class="avatar" src="images/avatar1.webp" alt="Avatar" style="width:70px">O projeto de vocês servirá de inspiração para os outros. Bom Trabalho!</div>
+        <div class="danger">
+          <img class="avatar" src="images/avatar2.avif" alt="Avatar" style="width:70px">Arrasaram no projeto!</div>
+        <div class="danger">
+          <img class="avatar" src="images/avatar3.avif" alt="Avatar" style="width:70px"><strong>Incrivel!</strong> Bom trabalho meninos, o projeto ficou muito bom.</div>
+       
+       
+        </main>
+    <footer>
+
+    </footer>
+    <script>
+        function toggleInfo(infoId, setaId) {
+          const info = document.getElementById(infoId);
+          const seta = document.getElementById(setaId);
+      
+          info.classList.toggle("visible");
+          seta.classList.toggle("girada");
+        }
+      </script>
+</body>
+</html>

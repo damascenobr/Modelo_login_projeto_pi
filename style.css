@@ -1,0 +1,266 @@
+/* Reset básico para remover margens e paddings padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos do corpo da página */
+body {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* Adiciona espaço nas laterais em telas pequenas */
+  background-image: url('../img/casa-senac.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Container principal do formulário */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.login-box {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Um pouco mais largo para o formulário de cadastro */
+  padding: 40px;
+}
+
+/* Estilos da área do logo */
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  max-width: 180px;
+  height: 70px;
+}
+
+/* Estilos dos títulos */
+.h4-pag {
+  color: #555d6b;
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.h4-pag, .h4-1-pag {
+  color: #555d6b;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.h4-1-pag {
+  margin-bottom: 40px;
+}
+
+/* Estilos dos grupos de formulário */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group label i {
+  margin-right: 8px;
+  color: #0066cc;
+}
+
+/* Estilos dos campos de input */
+input, select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #0066cc;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+input:focus::placeholder, select:focus::placeholder {
+  transform: translateY(-5px);
+  font-size: 14px;
+  transition: 0.5s;
+  opacity: 0.5;
+}
+
+input:not(:focus)::placeholder, select:not(:focus)::placeholder {
+  opacity: 1;
+  font-size: 16px;
+  transform: translateY(0);
+  transition: 0.5s ease;
+}
+
+/* Estilos para o checkbox */
+.lembrar-senha {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.lembrar-senha input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+}
+
+.lab-lembrar-senha {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: 0;
+  color: #555;
+}
+
+.lab-lembrar-senha a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.lab-lembrar-senha a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos do botão de submit */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2f80ed;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4192fd;
+}
+.botao-cadastrar{
+  border-radius: 5px;
+}
+
+/* Estilos dos links abaixo do formulário */
+.links {
+  display: flex;
+  margin-top: 35px;
+  text-align: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.links a {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0 5px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos do rodapé */
+.footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 480px) {
+  .login-box {
+      padding: 30px 20px;
+  }
+  
+  .logo img {
+      max-width: 150px;
+  }
+  
+  .h4-pag, .h4-1-pag {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-box {
+      padding: 30px 20px;
+  }
+
+  .logo img {
+      max-width: 150px;
+  }
+}
+/* Estilos específicos para a página de recuperação de senha */
+.botao-recuperar {
+  background-color: #2f80ed;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Mensagem de feedback após envio do formulário */
+.mensagem-feedback {
+  display: none;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  color: #0066cc;
+}
+
+.mensagem-feedback.mostrar {
+  display: block;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Estilo para o spinner de carregamento (opcional) */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 102, 204, 0.3);
+  border-radius: 50%;
+  border-top-color: #0066cc;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

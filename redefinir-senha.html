@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redefinir Senha</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+
+      <div class="logo">
+        <img src="../img/Senac_logo.svg" alt="Logo do Senac">
+      </div>
+
+      <h4 class="h4-pag">Nova senha</h4>
+      <h4 class="h4-1-pag">Escolha uma senha segura</h4>
+
+      <form id="formNovaSenha">
+        <div class="form-group">
+          <label for="senha">Nova senha</label>
+          <input type="password" id="senha" placeholder="Mínimo 6 caracteres" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmar">Confirmar nova senha</label>
+          <input type="password" id="confirmar" placeholder="Repita a senha" required>
+        </div>
+
+        <button type="submit" class="botao-recuperar">Redefinir senha</button>
+      </form>
+
+      <div class="links">
+        <a href="esqueceu.html">Cancelar</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("formNovaSenha").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const senha = document.getElementById("senha").value;
+      const confirmar = document.getElementById("confirmar").value;
+
+      if (senha.length < 6) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Senha muito curta!',
+          text: 'Use pelo menos 6 caracteres.'
+        });
+        return;
+      }
+
+      if (senha !== confirmar) {
+        Swal.fire({
+          icon: 'error',
+          title: 'As senhas não coincidem!',
+          text: 'Tente novamente.'
+        });
+        return;
+      }
+
+      Swal.fire({
+        title: 'Salvando nova senha...',
+        timer: 2000,
+        didOpen: () => Swal.showLoading()
+      }).then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Senha redefinida!',
+          text: 'Você será redirecionado para a tela de login.'
+        }).then(() => {
+          window.location.href = "index.html"; // Página de login real
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

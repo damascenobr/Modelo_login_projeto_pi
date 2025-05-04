@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Portal do SENAC</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link para ícones (opcional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Container principal do formulário de login -->
+    <div class="login-container">
+        <!-- Área do logo -->
+        <div class="logo">
+            <!-- Imagem do logo - substitua pelo caminho correto -->
+            <img src="../img/Senac_logo.svg" alt="SENAC Logo">
+        </div>
+        
+        <!-- Título da página -->
+        <h4 class="h4-pag">Seja bem-vindo!</h4>
+        <h4 class="h4-1-pag">Faça o login para ter acesso à sua conta.</h4>
+        
+        <!-- Formulário de login -->
+        <form id="loginForm">
+            <!-- Grupo do campo de usuário -->
+            <div class="form-group">
+                <label for="username"><i class="fas fa-user"></i> Usuário</label>
+                <input type="text" id="username" placeholder="Digite seu CPF ou e-mail *" required>
+            </div>
+            
+            <!-- Grupo do campo de senha -->
+            <div class="form-group">
+                <label for="password"><i class="fas fa-lock"></i> Senha</label>
+                <input type="password" id="password" placeholder="Digite sua senha *" required>
+            </div>
+
+            <!-- Caixa de seleção lembrar senha -->
+            <div class="form-group lembrar-senha">
+                <input type="checkbox" id="lembrarSenha">
+                <label class="lab-lembrar-senha" for="lembrarSenha">Lembrar minha senha</label>
+            </div>
+            
+            
+            
+            <!-- Botão de submit -->
+            <button class="botao-entrar" type="submit">Entrar</button>
+        </form>
+        
+        <!-- Links úteis -->
+        <div class="links">
+            <a href="/esqueceu.html">Esqueci minha senha</a>
+            <a href="/cadastro.html">Primeiro acesso</a>
+        </div>
+        
+        <!-- Rodapé -->
+        <div class="footer">
+            © 2025 SENAC - Todos os direitos reservados
+        </div>
+    </div>
+  
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script> <!-- Importando os scripts do Bootstrap para ativar os componentes interativos -->
+
+</body>
+</html>
