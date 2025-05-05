@@ -1,0 +1,153 @@
+/* PG PESQUISA */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header { /* barra superior do senac */
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 0 30px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  header img { /* logo do senac */
+    height: 40px;
+  }
+  
+  nav a { /* links da barra superior */
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  .hero { /* primeira caixa azul grande "projetos integradores" */
+    background: linear-gradient(to right, #004A8C);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .hero input { /* input de busca */
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 60%;
+    max-width: 450px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .hero input:focus { 
+    outline: none;
+    box-shadow: 0 0 0 2px #2884D6;
+  }
+
+  .hero input:focus::placeholder {
+    font-size: 12px;
+    transition: 0.5s;
+    transform: translateY(-5px);
+  }
+
+  .hero input:not(:focus)::placeholder {
+    font-size: 15px;
+    transform: translatey(0);
+    transition: 0.5s ease;
+  }
+  
+  .sub { /* nome de busca destacado */
+    color: #F6931D;
+  }
+  
+  .form-section { /* caixa que engloba o titulo e a caixa laranja de filtros */
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .form-box { /* caixa laranja pra encontrar o projeto */
+    background-color: #F6931D;
+    display: inline-block;
+    padding: 20px;
+    width: 90%;
+    border-radius: 10px;
+  }
+  
+  .form-box label { /* titulos dentro da caixa de busca */
+    font-weight: bold;
+  }
+
+  .form-box input {
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+  }
+
+
+  .form-box select {
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+  }
+  
+  .form-box button { /* botao de clicar pra buscar */
+    background-color: #2884d6;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+  }
+
+  .form-box button:hover {
+    background-color: #4192fd;
+  }
+  
+  table {
+    margin: 40px auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  table, th, td {
+    border: 1px solid #000000;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  footer { /* caixa azul do footer */
+    background-color: #004A8C;
+    position: relative;
+    color: white;
+    padding: 40px 20px;
+    font-size: 15px;
+  }
+  
+  .footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .footer-columns div {
+    margin: 10px;
+    min-width: 150px;
+  }
+  
+  .footer-bottom { /* linha de divisao entre as infos do footer */
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #ffffff;
+    padding-top: 20px;
+  }
+  

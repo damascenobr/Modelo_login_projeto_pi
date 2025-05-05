@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title> PI - pesquisa </title>
+  <link rel="stylesheet" href="pesquisa.css">
+</head>
+<body>
+
+  <header>
+    <img src="Senac_logo.svg.png"  alt="Logo Senac" />
+    <nav>
+      <a href="#">Submeter</a>
+      <a href="#">Home</a>
+      <a href="#">Pesquisar PI</a>
+      <a href="#">Fórum</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Buscar <span class="sub">Projeto Integrador</span></h1>
+    <p>Busca direta: O que você procura?</p>
+    <input type="text" placeholder="Ex: full stack, administrativo..." />
+  </div>
+
+  <div class="form-section">
+    <h3>Busca por filtros</h3>
+    <div class="form-box">
+      <label for="areainteresse">Área de interesse:</label>
+      <select id="areainteresse">
+        <option>Nenhum</option>
+        <option>Tecnologia</option>
+        <option>Gastronomia</option>
+        <option>Beleza</option>
+        <option>Logística</option>
+      </select>
+
+      <label for="curso">Curso:</label>
+      <select id="curso">
+        <option>Nenhum</option>
+        <option>Programador Full-stack</option>
+        <option>Desenvolvedor de games</option>
+      </select>
+
+      <label for="ano">Ano:</label>
+      <select id="ano">
+        <option>Nenhum</option>
+        <option>2025</option>
+        <option>2024</option>
+      </select>
+
+      <button>Buscar</button>
+      <button class="x" onclick="document.get('form-box').value = ''">x</button>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome do Aluno</th>
+        <th>Descrição</th>
+        <th>Data de Atualização</th>
+        <th>Projeto</th>
+        <th>Acessar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Exemplo</td>
+        <td>Projeto sobre sustentabilidade</td>
+        <td>01/05/2025</td>
+        <td>Projeto Verde</td>
+        <td><button>Ver</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <div class="footer-columns">
+      <div>
+        <h4>Contato</h4>
+        <p>Telefone: (11) 99999-9999</p>
+        <p>Email: contato@senac.br</p>
+      </div>
+      <div>
+        <h4>Endereço</h4>
+        <p>Av. Senac, 123</p>
+        <p>São Paulo - SP</p>
+      </div>
+      <div>
+        <h4>Redes Sociais</h4>
+        <p>Instagram</p>
+        <p>Facebook</p>
+        <p>LinkedIn</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Senac São Paulo. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
