@@ -1,0 +1,242 @@
+/* RESET GERAL */
+/* Remove margens e paddings padrões dos navegadores, e aplica box-sizing border-box para facilitar o controle de tamanhos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CONFIGURAÇÕES GERAIS DO BODY */
+/* Define a fonte base, cor de fundo clara e cor de texto escura */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: #001f4d; /* Azul escuro padrão Senac */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO SENAC */
+img {
+    width: 150px;
+}
+
+/* Texto do logo (se usar texto em vez de imagem) */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Links do menu de navegação */
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Campo de busca no header */
+nav input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* BOTÃO "NOVO TÓPICO" */
+#novo-topico {
+    background-color: #ff6600; /* Laranja Senac */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* SEÇÃO QUE LISTA OS TÓPICOS */
+#topicos {
+    padding: 0 20px;
+}
+
+/* BLOCO INDIVIDUAL DE TÓPICO */
+.topico {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* animação suave */
+}
+
+/* Título do tópico */
+.topico h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Texto descritivo do tópico */
+.topico p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Rodapé fixo */
+footer {
+    background-color: #001f4d;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* MODAL (janela de criação de tópico) */
+/* Cobertura total da tela com fundo semi-transparente */
+.modal {
+    display: none; /* escondido inicialmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* fundo escuro transparente */
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+/* Conteúdo dentro do modal */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    animation: abrirModal 0.4s ease;
+}
+
+/* Campos de entrada dentro do modal */
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+/* Botões dentro do modal */
+.modal-content button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* BOTÃO SALVAR */
+#salvar-topico {
+    background-color: #ff6600;
+    color: white;
+}
+
+/* BOTÃO CANCELAR */
+#cancelar {
+    background-color: #ccc;
+    color: #333;
+}
+
+/* BOTÃO EXCLUIR DENTRO DO TÓPICO */
+.excluir-topico {
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* MARCAÇÃO DE HORA NOS COMENTÁRIOS */
+.topico small {
+    color: #888;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* ANIMAÇÃO AO CRIAR UM NOVO TÓPICO */
+.topico.novo {
+    transform: scale(1.05);
+    opacity: 0;
+    animation: aparecer 0.4s forwards;
+}
+
+/* Keyframe da animação */
+@keyframes aparecer {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ANIMAÇÃO MODAL */
+@keyframes abrirModal {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* RESPONSIVIDADE - Estilos para telas pequenas */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #novo-topico {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .topico {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .topico h2 {
+        font-size: 1.2rem;
+    }
+
+    .topico p {
+        font-size: 0.95rem;
+    }
+
+    .excluir-topico {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}

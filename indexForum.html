@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fórum Senac</title>
+  <link rel="stylesheet" href="/pagina_f-rum-main-main/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="/pagina_f-rum-main-main/images-removebg-preview.png" alt="Logo Senac">
+    </div>
+    <nav>
+      <a href="#">Categorias</a>
+      <a href="#">Tópicos recentes</a>
+      <input type="text" placeholder="Pesquisar...">
+    </nav>
+  </header>
+
+  <main>
+    <button id="novo-topico">Novo Tópico</button>
+    <hr>
+    
+    <!-- Aqui os tópicos aparecerão com comentários e respostas -->
+    <section id="topicos">
+      <!-- Os tópicos serão inseridos aqui via JS -->
+    </section>
+
+    <!-- Modal para criar novo tópico -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2>Criar Novo Tópico</h2>
+        <input type="text" id="titulo" placeholder="Título do Tópico">
+        <textarea id="descricao" placeholder="Descrição do Tópico"></textarea>
+        <button id="salvar-topico">Salvar</button>
+        <button id="cancelar">Cancelar</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Senac Fórum</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
