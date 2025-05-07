@@ -1,3 +1,110 @@
+/*Aqui encontra o arquivo css da página de Breno e Valter */
+    /*Estilos novos para a barra de navegação*/
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    
+    .logo {
+      height: 40px;
+    }
+    
+    .nav-container {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .nav-button {
+      padding: 10px 16px;
+      background: #fff;
+      /* border-radius: 8px; */
+      text-decoration: none;
+      color: #003366;
+      font-weight: 500;
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .nav-button:hover {
+      background: #eef3f8;
+      transform: scale(1.03);
+    }
+    
+    .nav-button.active {
+      border-bottom: 3px solid #FFA500;
+      font-weight: 700;
+    }
+    
+    /* Mobile */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+    
+      .nav-container {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        display: none;
+      }
+    
+      .nav-container.active {
+        display: flex;
+      }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Importei uma fonte Inter da Google Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
 

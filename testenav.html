@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interface Senac</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="testenav.css" />
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="/home" class="logo-link">
+        <img src="/Senac_logo.svg.png" alt="Logo do Senac" class="logo" />
+      </a>
+
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <div class="nav-container">
+        <a href="/submeter" class="nav-button">
+          <span class="icon-text"><i class="bi bi-plus-lg"></i> Submeter</span>
+        </a>
+        <a href="/home" class="nav-button active">
+          <span class="icon-text"><i class="bi bi-house-door-fill"></i> Home</span>
+        </a>
+        <a href="/pesquisar" class="nav-button">
+          <span class="icon-text"><i class="bi bi-search"></i> Pesquisar PI</span>
+        </a>
+        <a href="/forum" class="nav-button">
+          <span class="icon-text"><i class="bi bi-chat-dots-fill"></i> Fórum</span>
+        </a>
+        <a href="/perfil" class="nav-button">
+          <span class="icon-text"><i class="bi bi-person-circle"></i> Perfil</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL-->
+    <!-- <main class="main-content">
+      <h1>Bem-vindo!</h1>
+      <p>Conteúdo principal...</p>
+    </main> -->
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="Senac_logo.svg.png" alt="Logo Senac" />
+      </div>
+
+      <div class="footer-links">
+        <a href="/contato">Contato</a>
+        <a href="/privacidade">Privacidade</a>
+        <a href="/sobre">Sobre</a>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Senac. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-container');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+</body>
+</html>

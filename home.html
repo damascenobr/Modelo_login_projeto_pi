@@ -20,7 +20,7 @@
 <body>
 
     <!-- Cabeçalho -->
-    <header class="topo">
+    <!-- <header class="topo">
       <div class="logo">
         <img src="Senac_logo.svg.png" alt="Senac">
         <span><strong>Senac Bahia</strong></span>
@@ -30,10 +30,29 @@
         <a href="#" class="fale">Fale Conosco</a>
         <a href="#" class="denuncia">Canal de Denúncias</a>
       </div>
-    </header>
+    </header> -->
   
     <!-- Menu de navegação -->
-    <nav class="menu">
+    <nav class="navbar">
+      <a href="/home" class="logo-link">
+        <img src="/img/Senac_logo.svg" alt="Logo do Senac" class="logo" />
+      </a>
+  
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        ☰
+      </button>
+  
+      <div class="nav-container">
+        <a href="/submeter" class="nav-button">Submeter</a>
+        <a href="/home" class="nav-button active">Home</a>
+        <a href="/pesquisar" class="nav-button">Pesquisar PI</a>
+        <a href="/forum" class="nav-button">Fórum</a>
+        <a href="/perfil" class="nav-button">Perfil</a>
+      </div>
+    </nav>
+  
+    <script src="testenav.js"></script>
+    <!-- <nav class="menu">
       <ul>
         <li>Institucional</li>
         <li>Unidades</li>
@@ -50,7 +69,7 @@
         <span class="search-icon">🔍</span>
         <input type="search" class="search-input" placeholder="Buscar...">
       </div>
-    </nav>
+    </nav> -->
   
     <!-- Carrossel Bootstrap -->
     <div id="senacCarousel" class="carousel slide" data-bs-ride="carousel">

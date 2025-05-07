@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background-color: #f9f9f9;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  height: 40px;
+  margin-left: 12px;
+}
+
+.nav-container {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-button {
+  padding: 10px 16px;
+  background: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #003366;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-button i {
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-button:hover {
+  background: #eef3f8;
+  transform: scale(1.03);
+  color: #F6931D;
+}
+
+.nav-button:hover i {
+  color: #F6931D;
+}
+
+.nav-button.active {
+  border-bottom: 3px solid #FFA500;
+  font-weight: 700;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Responsivo NAV */
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #003366;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-container {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: none;
+  }
+
+  .nav-container.active {
+    display: flex;
+  }
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+  flex: 1;
+  padding: 30px;
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: #003366;
+  color: white;
+  padding: 20px 30px;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo img {
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-left: 30px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #F6931D;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #F6931D;
+}
+
+.footer-bottom {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 
+Padrão de cores:
+LARANJÃO - #F6931D
+LARANJINHA - #FCC080
+AZUL ESCURO - #004A8C
+AZUL CLARO - #2884D6
+CINZA CLARO - #EBEBEB */
