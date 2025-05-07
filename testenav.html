@@ -4,26 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interface Senac</title>
+
+  <!-- Bootstrap Icons para os ícones de navegação e redes sociais -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Arquivo CSS principal -->
   <link rel="stylesheet" href="testenav.css" />
 </head>
 <body>
 
+  <!-- Wrapper para manter o footer no fim da página -->
   <div class="wrapper">
+
     <!-- NAVBAR -->
     <nav class="navbar">
+      <!-- Logo do Senac -->
       <a href="/home" class="logo-link">
         <img src="/Senac_logo.svg.png" alt="Logo do Senac" class="logo" />
       </a>
 
+      <!-- Botão hamburger (visível no mobile) -->
       <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
         ☰
       </button>
 
+      <!-- Menu de navegação -->
       <div class="nav-container">
+        <!-- Botão Submeter com ícone "+" -->
         <a href="/submeter" class="nav-button">
           <span class="icon-text"><i class="bi bi-plus-lg"></i> Submeter</span>
         </a>
+
+        <!-- Botões principais -->
         <a href="/home" class="nav-button active">
           <span class="icon-text"><i class="bi bi-house-door-fill"></i> Home</span>
         </a>
@@ -39,37 +51,45 @@
       </div>
     </nav>
 
-    <!-- CONTEÚDO PRINCIPAL-->
-    <!-- <main class="main-content">
+    <!-- Conteúdo principal desativado por enquanto -->
+    <!--
+    <main class="main-content">
       <h1>Bem-vindo!</h1>
       <p>Conteúdo principal...</p>
-    </main> -->
+    </main>
+    -->
   </div>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
+      <!-- Logo no rodapé -->
       <div class="footer-logo">
         <img src="Senac_logo.svg.png" alt="Logo Senac" />
       </div>
 
+      <!-- Links institucionais -->
       <div class="footer-links">
         <a href="/contato">Contato</a>
         <a href="/privacidade">Privacidade</a>
         <a href="/sobre">Sobre</a>
       </div>
 
+      <!-- Redes sociais com ícones do Bootstrap -->
       <div class="footer-social">
         <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
         <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
       </div>
     </div>
+
+    <!-- Rodapé inferior -->
     <div class="footer-bottom">
       © 2025 Senac. Todos os direitos reservados.
     </div>
   </footer>
 
+  <!-- Script para toggle do menu hamburguer -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-container');

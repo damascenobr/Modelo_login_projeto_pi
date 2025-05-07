@@ -1,23 +1,25 @@
+/* Reset básico de margens e caixas */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Fonte e fundo geral */
 body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   background-color: #f9f9f9;
 }
 
+/* Wrapper geral para garantir que o footer fique no fundo */
 .wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* NAVBAR */
-
+/* ===================== NAVBAR ===================== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -29,16 +31,19 @@ body, html {
   z-index: 10;
 }
 
+/* Tamanho do logo */
 .logo {
   height: 40px;
   margin-left: 12px;
 }
 
+/* Container com os botões de navegação */
 .nav-container {
   display: flex;
   gap: 20px;
 }
 
+/* Botões do menu */
 .nav-button {
   padding: 10px 16px;
   background: #fff;
@@ -49,11 +54,13 @@ body, html {
   transition: all 0.2s ease-in-out;
 }
 
+/* Ícones nos botões */
 .nav-button i {
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
+/* Hover visual nos botões */
 .nav-button:hover {
   background: #eef3f8;
   transform: scale(1.03);
@@ -64,19 +71,22 @@ body, html {
   color: #F6931D;
 }
 
+/* Botão ativo (página atual) */
 .nav-button.active {
   border-bottom: 3px solid #FFA500;
   font-weight: 700;
 }
 
+/* Layout para alinhar ícone + texto */
 .icon-text {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-/* Responsivo NAV */
+/* ===================== NAVBAR MOBILE ===================== */
 
+/* Botão hamburguer - só aparece em telas pequenas */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -86,6 +96,7 @@ body, html {
   color: #003366;
 }
 
+/* Estilos para responsividade */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -109,22 +120,25 @@ body, html {
   }
 }
 
-/* CONTEÚDO PRINCIPAL */
+/* ===================== CONTEÚDO ===================== */
+
+/* Área de conteúdo principal */
 .main-content {
   flex: 1;
   padding: 30px;
 }
 
-/* FOOTER */
+/* ===================== FOOTER ===================== */
 
 .footer {
   background-color: #003366;
   color: white;
   padding: 20px 30px;
   font-size: 14px;
-  margin-top: auto;
+  margin-top: auto; /* Empurra o footer para o fundo */
 }
 
+/* Container com logo, links e redes sociais */
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -133,11 +147,13 @@ body, html {
   gap: 20px;
 }
 
+/* Estilo da logo no footer */
 .footer-logo img {
   height: 40px;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1); /* Deixa o logo branco */
 }
 
+/* Links institucionais */
 .footer-links {
   display: flex;
   gap: 20px;
@@ -155,6 +171,7 @@ body, html {
   color: #F6931D;
 }
 
+/* Ícones sociais */
 .footer-social {
   display: flex;
   gap: 15px;
@@ -170,6 +187,7 @@ body, html {
   color: #F6931D;
 }
 
+/* Rodapé inferior */
 .footer-bottom {
   margin-top: 15px;
   text-align: center;
@@ -177,20 +195,13 @@ body, html {
   opacity: 0.8;
 }
 
-
-
-
-
-
-
-
-
-
-
+/* ===================== PALETA DE CORES ===================== */
 /* 
 Padrão de cores:
 LARANJÃO - #F6931D
 LARANJINHA - #FCC080
 AZUL ESCURO - #004A8C
 AZUL CLARO - #2884D6
-CINZA CLARO - #EBEBEB */
+CINZA CLARO - #EBEBEB 
+*/
+/* ===================== FIM DO CSS ===================== */
