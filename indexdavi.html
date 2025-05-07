@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Definições básicas da página -->
+  <meta charset="UTF-8">
+  <title>Home - SENAC BA</title>
+  <!-- Link para o seu CSS personalizado -->
+  <link rel="stylesheet" href="/pase.css">
+  <!-- Link do Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header>
+  <div class="container cabecalho">
+    <img src="/imag/senac_logo_branco.png" alt="Logomarca do SENAC" class="logo">
+  <div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">PIS</a>
+      <a href="#">Serviços</a>
+      <a href="#">Contato</a>
+    </nav> 
+</header>
+
+<!-- Carrossel -->
+<div id="carouselExampleControls" class="carouselSlide carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/imag/bbe76849d1df45548938851db341d2e0.jpg" alt="Primeiro slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/imag/images.jpg" alt="Segundo slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/imag/Senac.jpg" alt="Terceiro slide">
+    </div>
+  </div>
+
+  <!-- Botões de navegação -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Próximo</span>
+  </button>
+</div>
+
+<!-- Seção de PIS -->
+<section class="section">
+  <h2 class="text-center mt-5">Nossos PIS</h2>
+
+  <!-- Área dos cards -->
+  <div class="cards" id="pisContainer">
+    <!-- JavaScript vai adicionar os cards aqui -->
+    
+  </div>
+
+  <!-- Botão para adicionar novo PI -->
+  <div class="text-center">
+    <a href="adicionarPi.html" class="btn btn-primary">Adicionar PI</a>
+  </div>
+
+  <!-- Botão para exportar os PIs -->
+  <div class="text-center mt-3">
+    <button class="btn btn-success" onclick="exportarCSV()">Exportar PIs para CSV</button>
+  </div>
+
+</section>
+
+<!-- Rodapé -->
+<footer>
+  © 2025 SENAC Bahia. Todos os direitos reservados.
+</footer>
+
+<!-- Bootstrap JS (necessário para o carrossel funcionar) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript para funcionamento da página -->
+<script>
+  // Carrega a lista de PIs do localStorage (memória do navegador) ou usa a lista padrão
+  const pis = JSON.parse(localStorage.getItem('pis')) || [
+    { titulo: "PI da turma1", descricao: "Projeto Integrador da Turma1.", membros: "Aluno1, Aluno2", arquivos: 2 },
+    { titulo: "PI da turma2", descricao: "Projeto Integrador da Turma2.", membros: "Aluno3, Aluno4", arquivos: 1 },
+    { titulo: "PI da turma3", descricao: "Projeto Integrador da Turma3.", membros: "Aluno5, Aluno6", arquivos: 3 },
+  ];
+
+  // Função que salva a lista de PIs no localStorage
+  function salvarPIS() {
+    localStorage.setItem('pis', JSON.stringify(pis)); // Converte para texto JSON e salva
+  }
+
+  // Função que desenha (renderiza) todos os PIs na página
+  function renderizarPIS() {
+    const container = document.getElementById('pisContainer'); // Pega o container onde os cards vão ficar
+    container.innerHTML = ''; // Limpa o conteúdo atual
+
+    pis.forEach((pi, index) => { // Para cada PI da lista
+      const card = document.createElement('div'); // Cria uma div
+      card.className = 'card p-3 mb-3 shadow-sm'; // Aplica estilos Bootstrap para o card
+
+      // Conteúdo do card
+      card.innerHTML = `
+        <h3>${pi.titulo}</h3>
+        <p><strong>Membros:</strong> ${pi.membros || "Não informado"}</p>
+        <p><strong>Arquivos enviados:</strong> ${pi.arquivos || 0}</p>
+        <p>${pi.descricao}</p>
+        <div class="mt-2">
+          <button class="btn btn-warning btn-sm me-2" onclick="editarPI(${index})">Editar</button>
+          <button class="btn btn-danger btn-sm" onclick="excluirPI(${index})">Excluir</button>
+        </div>
+      `;
+      container.appendChild(card); // Adiciona o card no container
+    });
+  }
+
+  // Função para editar um PI (abre caixinhas de prompt para alterar)
+  function editarPI(index) {
+    const novoTitulo = prompt("Novo título:", pis[index].titulo); // Pede novo título
+    const novosMembros = prompt("Novos membros:", pis[index].membros); // Pede novos membros
+    const novaDescricao = prompt("Nova descrição:", pis[index].descricao); // Pede nova descrição
+
+    // Se a pessoa preencher tudo, atualiza
+    if (novoTitulo && novosMembros && novaDescricao) {
+      pis[index].titulo = novoTitulo;
+      pis[index].membros = novosMembros;
+      pis[index].descricao = novaDescricao;
+      salvarPIS(); // Salva no localStorage
+      renderizarPIS(); // Atualiza a tela
+    }
+  }
+
+  // Função para excluir um PI
+  function excluirPI(index) {
+    if (confirm("Tem certeza que deseja excluir este PI?")) { // Pergunta confirmação
+      pis.splice(index, 1); // Remove o PI da lista
+      salvarPIS(); // Salva no localStorage
+      renderizarPIS(); // Atualiza a tela
+    }
+  }
+
+  // Função para exportar todos os PIs para um arquivo CSV
+  function exportarCSV() {
+    let csvContent = "data:text/csv;charset=utf-8,"; // Começa a criação do arquivo CSV
+    csvContent += "Título,Membros,Arquivos,Descrição\n"; // Cabeçalho
+
+    // Para cada PI, cria uma linha no CSV
+    pis.forEach(pi => {
+      const row = `"${pi.titulo}","${pi.membros}","${pi.arquivos}","${pi.descricao}"\n`;
+      csvContent += row;
+    });
+
+    // Prepara o download do arquivo CSV
+    const encodedUri = encodeURI(csvContent); // Codifica o conteúdo
+    const link = document.createElement('a'); // Cria um link invisível
+    link.setAttribute('href', encodedUri); // Define o conteúdo para baixar
+    link.setAttribute('download', 'projetos_pis.csv'); // Nome do arquivo
+    document.body.appendChild(link); // Adiciona o link na página
+    link.click(); // Clica no link para fazer o download
+    document.body.removeChild(link); // Remove o link
+  }
+
+  // Quando a página carregar, mostra os PIs
+  renderizarPIS();
+</script>
+
+</body>
+</html>

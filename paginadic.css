@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;  
+    /*  Fundo com imagem */
+    background-image: url('/imag/fundo.jpg'); /* caminho da imagem */
+    background-size: cover;        /* cobre a tela toda */
+    background-position: center;   /* centraliza a imagem */
+    background-repeat: no-repeat;  /* não repete */
+    
+    }
+
+  /* Cabeçalho com fundo azul e texto branco */
+  header {
+    background-color: #ffffff;
+    color: rgb(26, 39, 112);
+    padding: 1em 0;
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.7);
+    text-align: center;
+  }
+
+
+  header .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Links do menu de navegação */
+  nav a {
+    color: rgb(44, 56, 221);
+    text-decoration: none;
+    margin-right: 15px;
+  }
+
+  /* Área principal */
+  main {
+    width: 90%;
+    max-width: 700px;
+    margin: 2em auto;
+  }
+
+  form {
+    background-color: #f7f6f6;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.7);
+  }
+  
+
+  h1, h2 {
+    margin-bottom: 1em;
+  }
+
+  /* Espaçamento entre os campos do formulário */
+  .form-group {
+    margin-bottom: 1.5em;
+  }
+
+  /* Estilo dos rótulos */
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+
+  /* Estilo dos campos de entrada e textarea */
+  input[type="text"],
+  input[type="file"],
+  textarea {
+    width: 100%;
+    padding: 0.6em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  /* Botão de envio */
+  button {
+    padding: 0.7em 1.5em;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: #115e2a;
+  }
+
+  /* Responsivo para telas menores */
+    @media (max-width: 600px) {
+        form {
+        padding: 1em;
+        }
+    }
+    
+  /* Rodapé da página */
+  footer {
+    background-color: #1735dd36;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+  }
+
+  .cabecalho {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    gap: 200px; /* Espaço entre logo e o título */
+  }
+  
+  .logo {
+    width: 120px; /* ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+  }
+
+  
+  

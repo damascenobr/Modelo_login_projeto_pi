@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionar Novo PI - SENAC BA</title>
+  <!-- Link para o seu arquivo CSS personalizado -->
+  <link rel="stylesheet" href="/paginadic.css">
+</head>
+<body>
+
+<!-- Cabeçalho da página -->
+<header>
+  <div class="container cabecalho">
+    <img src="/imag/logo.png" alt="Logomarca do SENAC" class="logo">
+    <div>
+      <h1>SENAC Bahia - Adicionar Novo PI</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Adicionar PI</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<!-- Conteúdo principal -->
+<main>
+  <h2>Cadastro de Novo PI</h2>
+
+  <!-- Formulário para cadastro do PI -->
+  <form id="formAdicionarPI" enctype="multipart/form-data">
+    
+    <!-- Campo para o título -->
+    <div class="form-group">
+      <label for="titulo">Título do PI</label>
+      <input type="text" id="titulo" name="titulo" required>
+    </div>
+
+    <!-- Campo para os nomes dos membros -->
+    <div class="form-group">
+      <label for="membros">Membros do PI</label>
+      <input type="text" id="membros" name="membros" placeholder="Separe os nomes por vírgula" required>
+    </div>
+
+    <!-- Campo para upload de arquivos -->
+    <div class="form-group">
+      <label for="arquivos">Upload de Arquivos</label>
+      <input type="file" id="arquivos" name="arquivos" multiple required>
+    </div>
+
+    <!-- Campo para descrição -->
+    <div class="form-group">
+      <label for="descricao">Descrição do PI</label>
+      <textarea id="descricao" name="descricao" rows="4" required></textarea>
+    </div>
+
+    <!-- Botão para enviar o formulário -->
+    <button type="submit">Salvar PI</button>
+  </form>
+</main>
+
+<!-- Rodapé -->
+<footer>
+  © 2025 SENAC Bahia. Todos os direitos reservados.
+</footer>
+
+<!-- Script JavaScript para tratar o envio do formulário -->
+<script>
+  // Adiciona um ouvinte de evento ao formulário
+  document.getElementById('formAdicionarPI').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o envio tradicional do formulário
+
+    // Captura os valores dos campos
+    const titulo = document.getElementById('titulo').value;
+    const membros = document.getElementById('membros').value;
+    const descricao = document.getElementById('descricao').value;
+    const arquivos = document.getElementById('arquivos').files;
+
+    // Busca os PIs salvos no localStorage ou cria uma lista nova
+    let pis = JSON.parse(localStorage.getItem('pis')) || [];
+
+    // Cria um objeto com os dados do novo PI
+    const novoPI = {
+      titulo: titulo,
+      descricao: descricao,
+      membros: membros,
+      arquivos: arquivos.length // Armazena apenas a quantidade de arquivos
+    };
+
+    // Adiciona o novo PI à lista
+    pis.push(novoPI);
+
+    // Salva novamente a lista atualizada no localStorage
+    localStorage.setItem('pis', JSON.stringify(pis));
+
+    // Mostra mensagem de sucesso
+    alert('PI "' + titulo + '" cadastrado com sucesso!');
+
+    // Redireciona para a página inicial
+    window.location.href = "index.html";
+  });
+</script>
+
+</body>
+</html>
