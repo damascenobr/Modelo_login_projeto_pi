@@ -1,0 +1,41 @@
+===================== INSTRUÇÕES PARA EDITAR O CÓDIGO =====================
+
+A. Comente no seu código, informe sobre o que é cada coisa. Seleciona tudo e joga no gpt que ele faz isso pra vc;
+
+B. Renomeie suas imagens e suas páginas (html, css, js) de forma autodescritiva conforme sua respectiva página;
+
+C. Antes de começar a editar sua parte, encontre o comentário <!-- Botões principais --> dentro do body, no arquivo testenav.html
+    - modifique a classe "nav-button active" para "nav-button"
+    - identifique o botão correspondente a sua pagina e adicione o "active" 
+    - (ex: sua pagina é perfil):
+
+    passo 1:
+
+    <a href="/home" class="nav-button active">  <<<<<<< remover esse active
+          <span class="icon-text"><i class="bi bi-house-door-fill"></i> Home</span>
+        </a>
+        <a href="/pesquisar" class="nav-button">
+          <span class="icon-text"><i class="bi bi-search"></i> Pesquisar PI</span>
+        </a>
+        <a href="/perfil" class="nav-button">
+          <span class="icon-text"><i class="bi bi-person-circle"></i> Perfil</span>
+
+    passo 2:
+
+    <a href="/home" class="nav-button">
+          <span class="icon-text"><i class="bi bi-house-door-fill"></i> Home</span>
+        </a>
+        <a href="/pesquisar" class="nav-button">
+          <span class="icon-text"><i class="bi bi-search"></i> Pesquisar PI</span>
+        </a>
+        <a href="/perfil" class="nav-button active"> <<<<<< adicionar active na sua pagina
+          <span class="icon-text"><i class="bi bi-person-circle"></i> Perfil</span>
+
+D. Identifique os comentários destacados para localizar onde escrever o seu código:
+
+===================== ⚠ =====================
+
+    <!-- SEU CÓDIGO COMEÇA A PARTIR DAQUI --> (html)
+===================== SEU ESTILO A PARTIR DAQUI ===================== (css)
+
+E. Não mexa em mais nada além disso. Se identificar alguma incoerência, erro ou ponto de melhoria, sinalize à Vanessa/Jorge.

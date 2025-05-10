@@ -26,7 +26,7 @@ body, html {
   align-items: center;
   padding: 14px 20px;
   background: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.11);
   position: relative;
   z-index: 10;
 }
@@ -37,6 +37,9 @@ body, html {
   margin-left: 12px;
 }
 
+/* .logo-link {
+  height: 80px;
+} */
 /* Container com os botões de navegação */
 .nav-container {
   display: flex;
@@ -62,7 +65,7 @@ body, html {
 
 /* Hover visual nos botões */
 .nav-button:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.170);
   transform: scale(1.03);
   color: #F6931D;
 }
@@ -134,7 +137,7 @@ body, html {
   background-color: #003366;
   color: white;
   padding: 20px 30px;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: auto; /* Empurra o footer para o fundo */
 }
 
@@ -204,4 +207,29 @@ AZUL ESCURO - #004A8C
 AZUL CLARO - #2884D6
 CINZA CLARO - #EBEBEB
 */
+
+/* ===================== ⚠ ===================== */
+
+
+/* ===================== SEU ESTILO A PARTIR DAQUI ===================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================== ⚠ ===================== */
+
 /* ===================== FIM DO CSS ===================== */
